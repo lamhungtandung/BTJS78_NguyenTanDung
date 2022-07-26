@@ -18,15 +18,9 @@
 button {
     margin-left: 30px;
 }
-.bg{
-    background-image: url(https://cdn.jsdelivr.net/gh/khloe1425/baitapmang@master/img/corner-4.png);
-    background-size: cover;
-    background-position: right;
-    border-top-right-radius: 0.375rem;
-    border-bottom-right-radius: 0.375rem;
-}
+
 .container{
-    width: 800px;
+    width: 850px;
 }
 p{
     margin: 20px 0;

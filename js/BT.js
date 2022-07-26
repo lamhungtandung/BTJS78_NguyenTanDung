@@ -17,31 +17,30 @@ function showInput(element) {
     element.classList.toggle('show-text');
 }
 
-//Add number
-var addNumber = document.getElementById('addNumber');
+//Them so
+var themSO = document.getElementById('themso1');
 const array = [];
-addNumber.onclick = function () {
+themSO.onclick = function () {
     //input
-    var numberAdds = Number(document.getElementById('numberAdds').value);
+    var soThem = Number(document.getElementById('sothem').value);
     //output
 
-    //progress
-    var arrays = addNumbers(numberAdds, array)
-    resultNumberAdd.innerHTML = array
+    var arrays = thuchienThemSo(soThem, array)
+    SoThemVao.innerHTML = array
 }
-function addNumbers(number, array) {
+function thuchienThemSo(number, array) {
     array.push(Number(number));
     return array
 }
 
-//Sum
-var sum = document.getElementById('sum');
-sum.onclick = function () {
-    var sumresult = sumPlus(array);
-    var resultSum = document.getElementById('resultSum');
-    resultSum.innerHTML = sumresult
+//tinh tong
+var tinhTong = document.getElementById('sum');
+tinhTong.onclick = function () {
+    var mangSo = thuchien(array);
+    var hienThi = document.getElementById('txtResult1');
+    hienThi.innerHTML = mangSo;
 }
-function sumPlus(array) {
+function thuchien(array) {
     var ketQua = 0;
     for (var i = 0; i < array.length; i++) {
         if (array[i] >= 0) {
@@ -53,10 +52,10 @@ function sumPlus(array) {
 
 
 //Đếm số dương 
-var countPlus = document.getElementById('demso');
-countPlus.onclick = function () {
-    var sumresult = demsoDuong(array);
-    document.getElementById('txtResult2').innerHTML = sumresult
+var demsoDuongg = document.getElementById('demso');
+demsoDuongg.onclick = function () {
+    var hienThi = demsoDuong(array);
+    document.getElementById('txtResult2').innerHTML = 'Số dương:  ' + hienThi;
 }
 function demsoDuong(array) {
     var soDuong = 0;
@@ -68,11 +67,11 @@ function demsoDuong(array) {
     return soDuong;
 }
 
-//số nhỏ nhất trong mảng
+//số nhỏ nhất
 var soNhoNhat = document.getElementById('nhonhat');
 soNhoNhat.onclick = function () {
     var sosanh = NhoNhat(array);
-    document.getElementById('txtResult3').innerHTML = ' Số nhỏ nhất trong mảng:  ' + sosanh;
+    document.getElementById('txtResult3').innerHTML = ' Số nhỏ nhất:  ' + sosanh;
 }
 function NhoNhat(array) {
     var soNhoNhat2 = array[0];
@@ -84,11 +83,11 @@ function NhoNhat(array) {
     return soNhoNhat2;
 }
 
-//số dương nhỏ nhất trong mảng
+//số dương nhỏ nhất
 var duongNhoNhat = document.getElementById('timso');
 duongNhoNhat.onclick = function () {
     var sosanh = soDuongNN(array, NhoNhat);
-    document.getElementById('txtResult4').innerHTML = ' Số dương nhỏ nhất trong mảng: ' + sosanh;
+    document.getElementById('txtResult4').innerHTML = ' Số dương nhỏ nhất: ' + sosanh;
 }
 function soDuongNN(array, callback) {
     
@@ -134,172 +133,159 @@ function soChanCuoi(array) {
 var DoiSo = document.getElementById('doiso');
 DoiSo.onclick = function () {
     //input
-    var number1 = Number(document.getElementById('number1').value);
+    var soThu1 = Number(document.getElementById('number1').value);
 
-    var number2 = Number(document.getElementById('number2').value);
-    //progresss
+    var soThu2 = Number(document.getElementById('number2').value);
 
-    var replaceresult = replaceNumbers(array, number1, number2);
-    var resultReplace = document.getElementById('resultReplace');
-    resultReplace.innerHTML = ' Mảng sau khi đổi: ' + replaceresult
+    var ketQua = doiSo(array, soThu1, soThu2);
+    document.getElementById('txtResult8').innerHTML = ' Mảng sau khi đổi: ' + ketQua;
 }
-function replaceNumbers(array, number1, number2) {
+function doiSo(array, soThu1, soThu2) {
 
-    var element = array[number1];
+    var element = array[soThu1];
     
-    array[number1] = array[number2];
-    array[number2] = element
+    array[soThu1] = array[soThu2];
+    array[soThu2] = element
     return array;
 }
-// Sắp xếp theo thứ tự tăng dần
+// Sắp xếp
 
-var sortNumber = document.getElementById('sortNumber');
-sortNumber.onclick = function () {
+var sapXep = document.getElementById('sapxep');
+sapXep.onclick = function () {
     //input
-    //progresss
 
-    var sortResults = sortNumbers(array);
-    var resultSort = document.getElementById('resultSort');
-    resultSort.innerHTML = ' Mảng sau khi sắp xếp: ' + sortResults
+    var ketQua = sapXepso(array);
+    document.getElementById('txtResult6').innerHTML = 'sắp xếp: ' + ketQua;
 }
-function sortNumbers(array) {
-
-    //C1:Dùng hàm sort:
-    // array.sort(function (a, b) {
-    //     return a - b
-    // })
-
-    //C2:lấy từng số trong mảng so sánh với các số còn lại
+function sapXepso(array) {
     for (var i = 0; i < array.length; i++) {
-        var indexMin = i;
-        for (var j = i + 1; j < array.length; j++) {
-            if (array[indexMin] > array[j]) {
-                indexMin = j;
+        var min = i;
+        for (var u = i + 1; u < array.length; u++) {
+            if (array[min] > array[u]) {
+                min = u;
             }
         }
         var number1 = array[i];
-        array[i] = array[indexMin];
-        array[indexMin] = number1
+        array[i] = array[min];
+        array[min] = number1
     }
 
     return array;
 }
 
 
-// Tìm số nguyên tố đầu tiên trong mảng. Nếu mảng không có số nguyên tố thì trả về – 1
+// Tìm số nguyên tố đầu tiên
 
-var intergerNumber = document.getElementById('intergerNumber');
-intergerNumber.onclick = function () {
+var timso = document.getElementById('timsonguyen');
+timso.onclick = function () {
     //input
-    var resultInterger = document.getElementById('resultInterger');
-    //progresss
+    var xuat = document.getElementById('txtResult7');
+    //xu li
 
-    var interResults = firstNumber(array, checkSNT);
-    resultInterger.innerHTML = ' Số nguyên đầu tiên là: ' + interResults
+    var ketQua = soNguyenDauTien(array, kiemtraso);
+    xuat.innerHTML = ' Số nguyên đầu tiên là: ' + ketQua
 }
-function firstNumber(array, callback) {
+function soNguyenDauTien(array, xuli) {
 
-    var arraySNT = [];
+    var array2 = [];
     for (var i = 0; i < array.length; i++) {
-        var checkSNTS = callback(array[i]);
-        if (checkSNTS) {
-            arraySNT.push(array[i])
+        var kiemtra = xuli(array[i]);
+        if (kiemtra) {
+            array2.push(array[i])
         }
     }
-    if (arraySNT.length === 0) {
+    if (array2.length === 0) {
         return -1
     }
-    var firstInterger = arraySNT.shift();
-    return firstInterger
+    var dautien = array2.shift();
+    return dautien
 }
-function checkSNT(number) {
-    var checkSNTs = true;
+function kiemtraso(number) {
+    var kt = true;
     var soBiChia = 2;
     if (number <= 1) {
-        checkSNTs = false;
-        return checkSNTs
+        kt = false;
+        return kt
     }
     for (soBiChia; soBiChia <= Math.sqrt(number); soBiChia++) {
         if (number % soBiChia == 0) {
-            checkSNTs = false;
+            kt = false;
             break;
         }
     }
-    return checkSNTs;
+    return kt;
 }
 
 
-// Nhập thêm 1 mảng số thực, tìm xem trong mảng có bao nhiêu số nguyên?
-var arrayRealNumber = [];
-var addRealNumber = document.getElementById('addRealNumber');
-addRealNumber.onclick = function () {
+// Đếm sô nguyên
+var chuaSo = [];
+var themSo = document.getElementById('themso');
+themSo.onclick = function () {
     //input
-    var realNumbers = Number(document.getElementById('realNumbers').value);
-    addNumbers(realNumbers, arrayRealNumber);
-    //output
-    var output = 0;
-    //progress
-    var resultaddReal = document.getElementById('resultaddReal');
-
-    resultaddReal.innerHTML = arrayRealNumber
+    var soN = Number(document.getElementById('soN').value);
+    themso(soN, chuaSo);
+    
+    var ketQua = 0;
+    
+    document.getElementById('txtResult9').innerHTML = chuaSo;
 
 }
 
 
-
-var realNumber = document.getElementById('realNumber');
-realNumber.onclick = function () {
+var demSo = document.getElementById('demsonguyen');
+demSo.onclick = function () {
     //input
-    var resultReal = document.getElementById('resultReal');
-    //progress
+    var hienThi = document.getElementById('txtResult10');
 
-    var interResults = isInter(arrayRealNumber);
-    var lengthinter = interResults.length
-    if (lengthinter === 0) {
-        return resultReal.innerHTML = 'Không có số nguyên nào cả'
+    var thucHien = soSanh(chuaSo);
+    var u = thucHien.length
+    if (u === 0) {
+        return hienThi.innerHTML = 'Error!'
     }
-    resultReal.innerHTML = 'Có ' + lengthinter + ' số nguyên';
+    hienThi.innerHTML = 'Có ' + u + ' số nguyên';
 }
-function isInter(array) {
-    var intergerNumberss = [];
+function soSanh(array) {
+    var soHienThi = [];
+
     for (var i = 0; i < array.length; i++) {
         if (Number.isInteger(array[i])) {
-            intergerNumberss.push(array[i]);
+            soHienThi.push(array[i]);
         }
     }
-    return intergerNumberss
+    return soHienThi;
 }
 
-// So sánh số lượng số âm và dương xem số nào nhiều hơn.
-var compareNumber = document.getElementById('compareNumber');
-compareNumber.onclick = function () {
-    //input
-    var resultCompare = document.getElementById('resultCompare');
-    //progress
+// So sánh số lượng số âm và dương.
+var sosanhluong = document.getElementById('SSso');
+sosanhluong.onclick = function () {
 
-    var interResults = compare(array);
+    var hienThi = document.getElementById('txtResult11');
 
-    resultCompare.innerHTML = interResults
+    var xuat = sosanhso(array);
+
+    hienThi.innerHTML = xuat;
 }
-function compare(array) {
-    var arrayPlus = [];
-    var arrayMinus = [];
-    var output = '';
+function sosanhso(array) {
+    var array1 = [];
+    var array2 = [];
+//output
+    var ketQua = '';
+    //xu lí
     for (var i = 0; i < array.length; i++) {
         if (array[i] >= 0) {
-            arrayPlus.push(array[i]);
+            array1.push(array[i]);
         } else {
-            arrayMinus.push(array[i]);
+            array2.push(array[i]);
         }
     }
-    if (arrayPlus.length > arrayMinus.length) {
-        output = 'Số dương > Số âm'
-    } else if (arrayPlus.length < arrayMinus.length) {
-        output = ' Số âm > Số dương'
+    if (array1.length > array2.length) {
+        ketQua = 'Số dương > Số âm'
+    } else if (array1.length < array2.length) {
+        ketQua = ' Số âm > Số dương'
 
-    } else if (arrayPlus.length == arrayMinus.length) {
-        output = 'Số dương = Số âm'
+    } else if (array1.length == array2.length) {
+        ketQua = 'Số dương = Số âm'
 
     }
-    return output
+    return ketQua
 }

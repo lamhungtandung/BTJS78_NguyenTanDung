@@ -14,29 +14,28 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <form class="w-100">
+    <form class="w-50 py-5">
         <div class="container">
-            <div class="bg">
-
+            <div class="remake">
                 <div class="questions">
                     <div class="blue">
-                        <input type="number" class="form-control red" placeholder="Nhập số để thêm" id="numberAdds">
-                        <button type="button" class="btn btn-primary" id="addNumber">Thêm số</button>
+                        <input type="number" class="form-control red" placeholder="Nhập số để thêm" id="sothem">
+                        <button type="button" class="btn btn-success" id="themso1">Thêm số</button>
                     </div>
-                    <div id="resultNumberAdd">
-                        👉
+                    <div id="SoThemVao">
+                        
                     </div>
                 </div>
                 <div class="question">
                     <div class="wrap-question">
-                        <p>1. Tổng các số dương trong mảng.</p>
+                        <p>1. Tổng số dương</p>
                         <div class="icon-question">
                             <i class="fa-solid fa-angle-down"></i>
                         </div>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary" id="sum" type="button">Tổng các số dương trong mảng.</button>
-                        <div id="resultSum"></div>
+                        <button class="btn btn-success" id="sum" type="button">Tính Tổng</button>
+                        <div id="txtResult1"></div>
                     </div>
                 </div>
                 <div class="question">
@@ -46,9 +45,8 @@
                             <i class="fa-solid fa-angle-down"></i>
                         </div>
                     </div>
-
                     <div class="form-group">
-                        <button class="btn btn-primary" type="button" id="demso">Đếm số</button>
+                        <button class="btn btn-success" type="button" id="demso">Đếm số</button>
                         <div id="txtResult2"></div>
                     </div>
                 </div>
@@ -60,19 +58,19 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary" type="button" id="nhonhat">Tìm số nhỏ nhất</button>
+                        <button class="btn btn-success" type="button" id="nhonhat">Tìm số nhỏ nhất</button>
                         <div id="txtResult3"></div>
                     </div>
                 </div>
                 <div class="question">
                     <div class="wrap-question">
-                        <p>4. Tìm số dương nhỏ nhất trong mảng.</p>
+                        <p>4. Tìm số dương nhỏ nhất.</p>
                         <div class="icon-question">
                             <i class="fa-solid fa-angle-down"></i>
                         </div>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary" type="button" id="timso">Tìm</button>
+                        <button class="btn btn-success" type="button" id="timso">Tìm</button>
                         <div id="txtResult4"></div>
                     </div>
                 </div>
@@ -84,7 +82,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary" type="button" id="timso2">Tìm số</button>
+                        <button class="btn btn-success" type="button" id="timso2">Tìm số</button>
                         <div id="txtResult5"></div>
                     </div>
                 </div>
@@ -96,74 +94,68 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="number" id="number1">
-                        <input type="number" id="number2">
+                        <input placeholder="Vi tri 1" type="number" id="number1">
+                        <input placeholder="Vi tri 2" type="number" id="number2">
 
-                        <button class="btn btn-primary" type="button" id="doiso">Đổi số</button>
-                        <div id="resultReplace"></div>
+                        <button class="btn btn-success" type="button" id="doiso">Đổi số</button>
+                        <div id="txtResult8"></div>
                     </div>
                 </div>
                 <div class="question">
                     <div class="wrap-question">
-                        <p>7. Sắp xếp theo thứ tự tăng dần</p>
+                        <p>7. Sắp xếp tăng dần</p>
                         <div class="icon-question">
                             <i class="fa-solid fa-angle-down"></i>
                         </div>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary" type="button" id="sortNumber">Sắp xếp số</button>
-                        <div id="resultSort"></div>
+                        <button class="btn btn-success" type="button" id="sapxep">Sắp xếp</button>
+                        <div id="txtResult6"></div>
                     </div>
                 </div>
                 <div class="question">
                     <div class="wrap-question">
-                        <p>8. Tìm số nguyên tố đầu tiên trong mảng. Nếu mảng không
-                            có số nguyên tố thì trả về -1</p>
+                        <p>8. Tìm số nguyên tố đầu tiên.</p>
                         <div class="icon-question">
                             <i class="fa-solid fa-angle-down"></i>
                         </div>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary" type="button" id="intergerNumber">Tìm số nguyên đầu
-                            tiên</button>
-                        <div id="resultInterger"></div>
+                        <button class="btn btn-success" type="button" id="timsonguyen">Tìm số nguyên tố</button>
+                        <div id="txtResult7"></div>
                     </div>
                 </div>
                 <div class="question">
                     <div class="wrap-question">
-                        <p>9. Nhập thêm 1 mảng số thực, tìm xem trong mảng có bao
-                            nhiêu số nguyên?</p>
+                        <p>9. Đếm số nguyên</p>
                         <div class="icon-question">
                             <i class="fa-solid fa-angle-down"></i>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="number" id="realNumbers">
-                        <button class="btn btn-primary" type="button" id="addRealNumber">Thêm số thực</button>
-                        <div id="resultaddReal"></div>
+                        <input type="number" id="soN">
+                        <button class="btn btn-primary" type="button" id="themso">Thêm số</button>
+                        <div id="txtResult9"></div>
 
-                        <button class="btn btn-primary" type="button" id="realNumber">Tìm số nguyên</button>
-                        <span id="resultReal"></span>
+                        <button class="btn btn-success" type="button" id="demsonguyen">Đếm số nguyên</button>
+                        <span id="txtResult10"></span>
                     </div>
                 </div>
                 <div class="question">
                     <div class="wrap-question">
-                        <p>10. So sánh số lượng số âm và dương xem số
-                            nào nhiều hơn.</p>
+                        <p>10. So sánh số lượng số âm và dương.</p>
                         <div class="icon-question">
                             <i class="fa-solid fa-angle-down"></i>
                         </div>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary" type="button" id="compareNumber">So sánh</button>
-                        <div id="resultCompare"></div>
+                        <button class="btn btn-success" type="button" id="SSso">So sánh</button>
+                        <div id="txtResult11"></div>
                     </div>
                 </div>
             </div>
         </div>
     </form>
-
-<div id="bluess">anhem</div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
