@@ -118,7 +118,6 @@ soChan.onclick = function () {
     document.getElementById('txtResult5').innerHTML = ' Số chẵn cuối cùng là:  ' + ketQua
 
 }
-console.log(-10 % 2 == 0);
 function soChanCuoi(array) {
     var chanCuoi = [];
     for (var i = 0; i < array.length; i++) {

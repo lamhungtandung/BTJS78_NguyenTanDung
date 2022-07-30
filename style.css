@@ -6,12 +6,12 @@
 }
 
 .control{
-    height: 64px;
+    height: 70px;
     overflow: hidden;
     transition: all 0.5s;
 }
 .control.show-text{
-    height: 180px;
+    height: 200px;
     transition: all 0.5;
 
 }
