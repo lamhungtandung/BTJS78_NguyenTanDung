@@ -1,17 +1,17 @@
-var question = document.querySelectorAll('.question');
-for (var i = 0; i < question.length; i++) {
-    const questions = question[i];
-    var btn = questions.querySelector('.wrap-question');
+var control = document.querySelectorAll('.control');
+for (var i = 0; i < control.length; i++) {
+    const a = control[i];
+    var btn = a.querySelector('.content');
     btn.addEventListener('click', () => {
-        showInput(questions)
+        showInput(a)
     })
-}
+};
 
 function showInput(element) {
-    for (var i = 0; i < question.length; i++) {
+    for (var i = 0; i < control.length; i++) {
 
-        if (element !== question[i]) {
-            question[i].classList.remove('show-text');
+        if (element !== control[i]) {
+            control[i].classList.remove('show-text');
         }
     }
     element.classList.toggle('show-text');
@@ -26,11 +26,11 @@ themSO.onclick = function () {
     //output
 
     var arrays = thuchienThemSo(soThem, array)
-    SoThemVao.innerHTML = array
+    SoThemVao.innerHTML = array;
 }
 function thuchienThemSo(number, array) {
     array.push(Number(number));
-    return array
+    return array;
 }
 
 //tinh tong
@@ -279,13 +279,13 @@ function sosanhso(array) {
         }
     }
     if (array1.length > array2.length) {
-        ketQua = 'Số dương > Số âm'
+        ketQua = 'Số dương > Số âm';
     } else if (array1.length < array2.length) {
-        ketQua = ' Số âm > Số dương'
+        ketQua = ' Số âm > Số dương';
 
     } else if (array1.length == array2.length) {
-        ketQua = 'Số dương = Số âm'
+        ketQua = 'Số dương = Số âm';
 
     }
-    return ketQua
+    return ketQua;
 }

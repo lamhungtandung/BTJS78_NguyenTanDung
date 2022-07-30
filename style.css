@@ -1,16 +1,16 @@
 
 
-.form-control.red{
+.form-control.turn{
     width: 50%;
     margin-right: 40px;
 }
 
-.question{
+.control{
     height: 64px;
     overflow: hidden;
     transition: all 0.5s;
 }
-.question.show-text{
+.control.show-text{
     height: 180px;
     transition: all 0.5;
 
@@ -23,30 +23,30 @@ button {
     width: 850px;
 }
 p{
-    margin: 20px 0;
+    margin: 25px 10px;
     margin-left: 30px;
 }
 
-.show-text .icon-question{
+.show-text .icon{
     transform: rotate(-180deg);
     transition: all 0.5s;
 }
-.icon-question{
+.icon{
     margin-right: 30px;
     transition: all 0.5s;
 }
-.blue{
+.section{
     display: flex;
 }
-.wrap-question{
+.content{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.question{
+.control{
     border: 1px solid #ccc;
 
 }
-.question:hover{
+.control:hover{
 cursor: pointer;
 }
